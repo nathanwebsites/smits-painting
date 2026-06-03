@@ -34,19 +34,22 @@ const highlights = [
 const testimonials = [
   {
     name: "Brendon P.",
-    initials: "BP",
     review: "I have absolutely no hesitation in recommending Josh and his team.",
+    photo:
+      "https://images.squarespace-cdn.com/content/v1/67f5aad5d1ef1273c18dcece/591ad513-b2f8-4645-9931-fb1a47059af4/IMG_1082.jpeg",
   },
   {
     name: "Marie D.",
-    initials: "MD",
     review: "Efficient, reliable and professional service. A fantastic job. Thanks team.",
+    photo:
+      "https://images.squarespace-cdn.com/content/v1/67f5aad5d1ef1273c18dcece/90488901-4afe-4734-a373-f48fa5c8ed8b/IMG_1147+2.jpeg",
   },
   {
     name: "Traycee",
-    initials: "T",
     review:
       "Josh and his most excellent crew were so professional and competent when they painted my home. A fantastic, above-&-beyond approach from Josh.",
+    photo:
+      "https://images.squarespace-cdn.com/content/v1/67f5aad5d1ef1273c18dcece/569381ba-c461-4377-84db-3b12e53fef45/IMG_1154.jpg",
   },
 ];
 
@@ -142,9 +145,9 @@ export default function HomePage() {
       </section>
 
       {/* ── Testimonials ── */}
-      <section className="py-20 px-4 bg-[#EDE8E3]">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
+      <section className="py-24 px-4 bg-[#EDE8E3]">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-14">
             <p className="text-[#8B5E3C] text-sm font-semibold tracking-[0.25em] uppercase mb-3">
               What Our Clients Say
             </p>
@@ -154,36 +157,63 @@ export default function HomePage() {
             <div className="w-16 h-0.5 bg-[#6b4423] mx-auto" />
           </div>
 
-          <div className="grid grid-cols-1 gap-5 max-w-3xl mx-auto">
+          <div className="flex flex-col gap-8">
             {testimonials.map((t, i) => (
               <div
                 key={i}
-                className="relative bg-[#F5F0EB] rounded-xl border border-[#D5CFC9] overflow-hidden flex items-start gap-5 p-6 shadow-sm hover:shadow-md transition-shadow duration-300"
+                className="flex flex-col sm:flex-row rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-500"
+                style={{ minHeight: "360px" }}
               >
-                {/* Brown left accent bar */}
-                <div className="absolute left-0 inset-y-0 w-1 bg-[#6b4423]" />
-
-                {/* Avatar */}
-                <div className="flex-shrink-0 w-14 h-14 rounded-full bg-[#6b4423] flex items-center justify-center text-white font-bold text-lg ml-3">
-                  {t.initials}
+                {/* Left: real work photo */}
+                <div className="sm:w-[40%] flex-shrink-0 relative h-64 sm:h-auto">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={t.photo}
+                    alt="Smit's Painting work"
+                    className="w-full h-full object-cover"
+                  />
+                  {/* Subtle warm gradient bleed at the right edge to merge into dark panel */}
+                  <div className="absolute inset-y-0 right-0 w-8 bg-gradient-to-r from-transparent to-[#1C0E07] hidden sm:block" />
                 </div>
 
-                {/* Review content */}
-                <div className="flex-1">
-                  {/* Stars */}
-                  <div className="flex gap-0.5 mb-2">
-                    {[...Array(5)].map((_, s) => (
-                      <svg key={s} className="w-4 h-4 text-[#8B5E3C]" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                    ))}
+                {/* Right: dark warm panel */}
+                <div
+                  className="flex-1 flex flex-col items-center justify-between px-8 sm:px-12 py-10 text-center"
+                  style={{
+                    background:
+                      "linear-gradient(145deg, #1C0E07 0%, #231208 60%, #1a0d06 100%)",
+                  }}
+                >
+                  {/* Top: decorative quote + label */}
+                  <div className="flex flex-col items-center gap-2">
+                    <svg
+                      className="w-12 h-9 text-[#6b4423]"
+                      fill="currentColor"
+                      viewBox="0 0 48 36"
+                      aria-hidden="true"
+                    >
+                      <path d="M0 36V21.818C0 9.455 7.273 2.545 21.818 0L24 4.364C18.182 5.455 14.182 7.455 12.727 10.545 11.636 12.909 11.273 14.909 11.636 16.909H21.818V36H0ZM26.182 36V21.818C26.182 9.455 33.455 2.545 48 0V4.364C42.182 5.455 38.182 7.455 36.727 10.545 35.636 12.909 35.273 14.909 35.636 16.909H45.818V36H26.182Z" />
+                    </svg>
+                    <p className="text-[#8B5E3C] text-[10px] font-bold tracking-[0.35em] uppercase">
+                      Testimonial
+                    </p>
                   </div>
 
-                  <p className="text-[#2C2C2C] italic leading-relaxed mb-3">
+                  {/* Middle: review text */}
+                  <p className="text-white/80 text-base sm:text-lg italic leading-relaxed max-w-sm">
                     &ldquo;{t.review}&rdquo;
                   </p>
 
-                  <p className="text-[#6b4423] font-semibold text-sm">{t.name}</p>
+                  {/* Bottom: divider + name in script */}
+                  <div className="flex flex-col items-center gap-2">
+                    <div className="w-10 h-px bg-[#6b4423]/60" />
+                    <p
+                      className="text-[#8B5E3C] text-2xl sm:text-3xl"
+                      style={{ fontFamily: "var(--font-dancing)" }}
+                    >
+                      {t.name}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}
