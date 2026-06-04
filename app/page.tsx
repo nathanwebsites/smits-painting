@@ -59,21 +59,22 @@ const testimonials = [
 export default function HomePage() {
   return (
     <>
-      {/* ── Hero — professional painter on the job ── */}
+      {/* ── Hero — painters at work, editorial lifestyle ── */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1693985120993-e9b203ce7631?w=1920&q=85&auto=format&fit=crop"
-          alt="Professional painter painting a room"
+          src="https://images.unsplash.com/photo-1574359411659-15573a27fd0c?w=1920&q=85&auto=format&fit=crop"
+          alt="Professional painters painting a living room"
           fill
           className="object-cover object-center"
+          style={{ filter: "saturate(1.18) brightness(1.06) sepia(0.12)" }}
           priority
         />
-        <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.35)" }} />
+        <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.18)" }} />
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(160deg, rgba(74,40,10,0.20) 0%, rgba(74,40,10,0.08) 45%, rgba(74,40,10,0.20) 100%)",
+              "linear-gradient(160deg, rgba(74,40,10,0.15) 0%, rgba(74,40,10,0.05) 45%, rgba(74,40,10,0.15) 100%)",
           }}
         />
 
