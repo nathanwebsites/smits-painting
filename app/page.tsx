@@ -34,18 +34,21 @@ const highlights = [
 const testimonials = [
   {
     name: "Brendon P.",
+    heading: "No Hesitation",
     review: "I have absolutely no hesitation in recommending Josh and his team.",
     photo:
       "https://images.squarespace-cdn.com/content/v1/67f5aad5d1ef1273c18dcece/591ad513-b2f8-4645-9931-fb1a47059af4/IMG_1082.jpeg",
   },
   {
     name: "Marie D.",
+    heading: "Efficient & Professional",
     review: "Efficient, reliable and professional service. A fantastic job. Thanks team.",
     photo:
       "https://images.squarespace-cdn.com/content/v1/67f5aad5d1ef1273c18dcece/90488901-4afe-4734-a373-f48fa5c8ed8b/IMG_1147+2.jpeg",
   },
   {
     name: "Traycee",
+    heading: "Above & Beyond",
     review:
       "Josh and his most excellent crew were so professional and competent when they painted my home. A fantastic, above-&-beyond approach from Josh.",
     photo:
@@ -157,27 +160,47 @@ export default function HomePage() {
       </section>
 
       {/* ── Testimonials ── */}
-      <section className="py-24 px-4 bg-[#EDE0C4]">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-14">
-            <p className="text-[#8B5A2B] text-sm font-semibold tracking-[0.25em] uppercase mb-3">
-              What Our Clients Say
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#2C1A0E] mb-4">
-              Customer <span className="text-[#8B5A2B]">Testimonials</span>
-            </h2>
-            <div className="w-16 h-0.5 bg-[#8B5A2B] mx-auto" />
-          </div>
+      <section className="py-20 bg-[#F5EDD9]">
+        {/* Section header */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
+          <p className="text-[#8B5A2B] text-sm font-semibold tracking-[0.25em] uppercase mb-3">
+            What Our Clients Say
+          </p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#2C1A0E]">
+            Customer <span className="text-[#8B5A2B]">Testimonials</span>
+          </h2>
+        </div>
 
-          <div className="flex flex-col gap-8">
-            {testimonials.map((t, i) => (
+        {/* Testimonial rows — alternating layout */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-20">
+          {testimonials.map((t, i) => {
+            const isReversed = i % 2 === 1;
+            return (
               <div
                 key={i}
-                className="flex flex-col sm:flex-row rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-500"
-                style={{ minHeight: "360px" }}
+                className={`flex flex-col ${isReversed ? "lg:flex-row-reverse" : "lg:flex-row"} items-stretch gap-0`}
+                style={{ minHeight: "460px" }}
               >
-                {/* Left: real work photo — hard edge */}
-                <div className="sm:w-[40%] flex-shrink-0 h-64 sm:h-auto">
+                {/* Text side */}
+                <div
+                  className={`flex-1 flex flex-col justify-center py-10 lg:py-0 ${
+                    isReversed ? "lg:pl-16 xl:pl-24" : "lg:pr-16 xl:pr-24"
+                  }`}
+                >
+                  <h3 className="text-4xl sm:text-5xl font-bold text-[#2C1A0E] leading-tight mb-5">
+                    {t.heading}
+                  </h3>
+                  <p className="text-[#2C1A0E]/75 text-lg leading-relaxed mb-10">
+                    &ldquo;{t.review}&rdquo;
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-px bg-[#8B5A2B]" />
+                    <span className="text-[#8B5A2B] font-semibold text-base">{t.name}</span>
+                  </div>
+                </div>
+
+                {/* Photo side */}
+                <div className="w-full lg:w-[48%] flex-shrink-0 h-72 lg:h-auto overflow-hidden rounded-2xl">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={t.photo}
@@ -185,43 +208,9 @@ export default function HomePage() {
                     className="w-full h-full object-cover"
                   />
                 </div>
-
-                {/* Right: dark warm panel */}
-                <div
-                  className="flex-1 flex flex-col items-center justify-between px-8 sm:px-12 py-10 text-center border-l-2 border-[#8B5A2B]/40"
-                  style={{ background: "#1C0E07" }}
-                >
-                  <div className="flex flex-col items-center gap-2">
-                    <svg
-                      className="w-12 h-9 text-[#8B5A2B]"
-                      fill="currentColor"
-                      viewBox="0 0 48 36"
-                      aria-hidden="true"
-                    >
-                      <path d="M0 36V21.818C0 9.455 7.273 2.545 21.818 0L24 4.364C18.182 5.455 14.182 7.455 12.727 10.545 11.636 12.909 11.273 14.909 11.636 16.909H21.818V36H0ZM26.182 36V21.818C26.182 9.455 33.455 2.545 48 0V4.364C42.182 5.455 38.182 7.455 36.727 10.545 35.636 12.909 35.273 14.909 35.636 16.909H45.818V36H26.182Z" />
-                    </svg>
-                    <p className="text-[#8B5A2B] text-[10px] font-bold tracking-[0.35em] uppercase">
-                      Testimonial
-                    </p>
-                  </div>
-
-                  <p className="text-white/80 text-base sm:text-lg italic leading-relaxed max-w-sm">
-                    &ldquo;{t.review}&rdquo;
-                  </p>
-
-                  <div className="flex flex-col items-center gap-2">
-                    <div className="w-10 h-px bg-[#8B5A2B]/60" />
-                    <p
-                      className="text-[#D4956A] text-2xl sm:text-3xl"
-                      style={{ fontFamily: "var(--font-dancing)" }}
-                    >
-                      {t.name}
-                    </p>
-                  </div>
-                </div>
               </div>
-            ))}
-          </div>
+            );
+          })}
         </div>
       </section>
 
