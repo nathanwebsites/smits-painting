@@ -60,32 +60,28 @@ const testimonials = [
 export default function HomePage() {
   return (
     <>
-      {/* ── Hero — parallax + gradient-mask fade ── */}
-      <section className="relative min-h-screen flex items-center justify-center">
+      {/* ── Hero — parallax + scroll-driven gradient-mask fade ── */}
+      <section className="relative min-h-[115vh] flex items-center justify-center overflow-hidden">
         <HeroBackground />
 
         <div className="relative z-20 text-center px-4 max-w-5xl mx-auto">
-          {/* Logo — hero centrepiece */}
-          <div className="mb-6 flex justify-center">
+          <p className="text-[#D4956A] text-sm sm:text-base font-semibold tracking-[0.25em] uppercase mb-8">
+            Professional Painting Services
+          </p>
+
+          {/* Logo — hero centrepiece, replaces heading text */}
+          <div className="mb-8 flex justify-center">
             <Image
               src="/logo.png"
               alt="Smit's Painting Company"
-              width={320}
-              height={96}
-              className="w-48 sm:w-64 md:w-80 h-auto object-contain drop-shadow-2xl"
+              width={560}
+              height={168}
+              className="w-72 sm:w-[420px] md:w-[520px] object-contain drop-shadow-2xl"
+              style={{ height: "auto" }}
               priority
             />
           </div>
 
-          <p className="text-[#D4956A] text-sm sm:text-base font-semibold tracking-[0.25em] uppercase mb-4">
-            Professional Painting Services
-          </p>
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-[1.1]">
-            Smit&apos;s{" "}
-            <span className="text-[#D4956A]">Painting</span>
-            <br />
-            Company
-          </h1>
           <p className="text-xl sm:text-2xl text-gray-300 mb-10 font-light tracking-wide">
             Quality Craftsmanship, Every Stroke
           </p>

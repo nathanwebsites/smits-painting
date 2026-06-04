@@ -14,16 +14,37 @@ export default function HeroBackground() {
 
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const heroHeight = window.innerHeight;
 
-      // Parallax: image drifts at 25% of scroll speed (slower than page = depth)
+      // ── Parallax ──────────────────────────────────────────────────────────
+      // Image moves at 25% of scroll speed — slower than the page = depth
       imageWrapper.style.transform = `translateY(${scrollY * 0.25}px)`;
 
-      // Gentle overall fade — fully gone at 90% of hero height
-      const opacity = Math.max(0, 1 - scrollY / (heroHeight * 0.9));
-      container.style.opacity = opacity.toString();
+      // ── Dynamic mask fade ─────────────────────────────────────────────────
+      // No fade at all until the user has scrolled past fadeDelay pixels.
+      // After that, the fade zone grows from the bottom upward over fadeDuration px.
+      //
+      // solidEnd  = where the mask starts going from black → transparent
+      //             100% at scroll 0 (whole image opaque), drifts to 55% at full fade
+      // fadeEnd   = where the mask reaches full transparency
+      //             equals solidEnd at scroll 0 (zero-width = invisible),
+      //             grows to solidEnd + 25% at full fade
+      const fadeDelay = 90;     // px scrolled before any fade appears
+      const fadeDuration = 720; // px of scroll over which fade builds to 100%
+
+      const progress = Math.max(
+        0,
+        Math.min(1, (scrollY - fadeDelay) / fadeDuration)
+      );
+
+      const solidEnd = (100 - progress * 45).toFixed(2);
+      const fadeEnd  = (100 - progress * 45 + progress * 25).toFixed(2);
+
+      const mask = `linear-gradient(to bottom, black 0%, black ${solidEnd}%, transparent ${fadeEnd}%)`;
+      container.style.setProperty("mask-image", mask);
+      container.style.setProperty("-webkit-mask-image", mask);
     };
 
+    // Initialise immediately so scroll-restored pages get the right state
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -32,17 +53,14 @@ export default function HeroBackground() {
   return (
     <div
       ref={containerRef}
-      className="absolute inset-0"
+      className="absolute inset-0 overflow-hidden"
       style={{
-        // Gradient mask dissolves the image into transparency from 58% down —
-        // no hard cutoff, melts into the page background colour beneath
-        WebkitMaskImage:
-          "linear-gradient(to bottom, black 0%, black 55%, rgba(0,0,0,0.4) 78%, transparent 100%)",
-        maskImage:
-          "linear-gradient(to bottom, black 0%, black 55%, rgba(0,0,0,0.4) 78%, transparent 100%)",
+        // SSR / pre-JS default: fully opaque, no fade visible
+        maskImage: "linear-gradient(to bottom, black 0%, black 100%)",
+        WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 100%)",
       }}
     >
-      {/* Oversized wrapper gives the parallax room to move without exposing edges */}
+      {/* Oversized wrapper: ±30% vertical headroom so parallax never exposes edges */}
       <div
         ref={imageRef}
         className="absolute left-0 right-0"
