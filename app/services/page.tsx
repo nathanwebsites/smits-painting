@@ -16,43 +16,43 @@ const services = [
     title: "Interior Painting",
     description:
       "Transform your living and working spaces with expertly applied interior paint. We handle walls, ceilings, trims, cornices, and feature walls with precision.",
-    swatchColor: "#D4A574",
-    swatchName: "Warm Honey",
+    photo: "https://images.unsplash.com/photo-1652829069834-2c05031199c5?w=800&q=80&auto=format&fit=crop",
+    photoAlt: "Professional painter applying paint to a wall with a roller",
   },
   {
     title: "Exterior Painting",
     description:
       "Boost your property's kerb appeal and protect it from the elements. We prepare, prime, and coat all exterior surfaces to a durable, beautiful finish.",
-    swatchColor: "#7FA8BE",
-    swatchName: "Sea Mist",
+    photo: "https://images.unsplash.com/photo-1774977737078-7ccc2ac697e6?w=800&q=80&auto=format&fit=crop",
+    photoAlt: "Painter on a ladder painting the exterior of a building",
   },
   {
     title: "Commercial Painting",
     description:
       "Professional painting for offices, retail spaces, warehouses, and industrial facilities. We minimise downtime and deliver a polished result.",
-    swatchColor: "#9DAAB5",
-    swatchName: "Slate Cool",
+    photo: "https://images.unsplash.com/photo-1599398766399-07f7a828044b?w=800&q=80&auto=format&fit=crop",
+    photoAlt: "Modern commercial office building exterior",
   },
   {
     title: "Roof Painting",
     description:
       "Extend the life of your roof with high-quality roof paint and sealants. We clean, treat, and coat all roof types — tiles, IBR, and corrugated iron.",
-    swatchColor: "#C07358",
-    swatchName: "Terracotta",
+    photo: "https://images.unsplash.com/photo-1681049400158-0ff6249ac315?w=800&q=80&auto=format&fit=crop",
+    photoAlt: "Workers performing roof maintenance and coating",
   },
   {
     title: "Waterproofing",
     description:
       "Prevent costly water damage with our professional waterproofing solutions. We treat flat roofs, parapets, balconies, basements, and wet areas.",
-    swatchColor: "#6B9E98",
-    swatchName: "Sage Teal",
+    photo: "https://images.unsplash.com/photo-1657502481490-9a4938421cc5?w=800&q=80&auto=format&fit=crop",
+    photoAlt: "Water droplet on a sealed stone surface demonstrating waterproofing",
   },
   {
     title: "Plastering",
     description:
       "Achieve perfectly smooth, crack-free walls before painting. We offer skimming, patching, and full plaster applications to bring any surface to standard.",
-    swatchColor: "#C8A97A",
-    swatchName: "Sandy Wheat",
+    photo: "https://images.unsplash.com/photo-1701850009190-2859ba2aeea6?w=800&q=80&auto=format&fit=crop",
+    photoAlt: "Worker applying plaster to a brick wall",
   },
 ];
 
@@ -83,7 +83,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Services grid — paint swatch cards */}
+      {/* Services grid */}
       <section className="py-16 px-4 bg-[#F5EDD9]">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -92,11 +92,16 @@ export default function ServicesPage() {
                 key={i}
                 className="rounded-xl overflow-hidden border border-[#C8B89A] hover:border-[#8B5A2B] hover:shadow-lg transition-all duration-300 group hover:-translate-y-1 transform flex flex-col bg-[#EDE0C4]"
               >
-                {/* Paint chip colour block */}
-                <div
-                  className="h-20 w-full flex-shrink-0"
-                  style={{ backgroundColor: service.swatchColor }}
-                />
+                {/* Service photo */}
+                <div className="h-48 w-full flex-shrink-0 overflow-hidden">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={service.photo}
+                    alt={service.photoAlt}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                </div>
 
                 {/* Card content */}
                 <div className="p-7 flex flex-col flex-1">

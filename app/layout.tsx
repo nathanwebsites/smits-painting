@@ -19,6 +19,11 @@ export const metadata: Metadata = {
   title: "Smit's Painting Company | Quality Craftsmanship, Every Stroke",
   description:
     "Professional painting services — interior, exterior, commercial, roof painting, waterproofing and plastering. Get a free quote today.",
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({

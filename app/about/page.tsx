@@ -148,12 +148,18 @@ export default function AboutPage() {
             {/* Team photo */}
             <div className="flex flex-col items-center">
               <div className="relative">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="https://picsum.photos/seed/portrait1/480/560"
-                  alt="Owner of Smit's Painting Company"
-                  className="w-full max-w-sm rounded-2xl border-2 border-[#8B5A2B] shadow-[0_8px_40px_rgba(139,90,43,0.15)]"
-                />
+                {/* TODO: Replace with the real owner photo once supplied by the client.
+                    Swap this placeholder div for:
+                    <img src="/images/owner-josh-smit.jpg" alt="Josh Smit — Founder of Smit's Painting Company"
+                         className="w-full max-w-sm rounded-2xl border-2 border-[#8B5A2B] shadow-[0_8px_40px_rgba(139,90,43,0.15)]" />
+                */}
+                <div className="w-full max-w-sm rounded-2xl border-2 border-[#C8B89A] bg-[#EDE0C4] shadow-[0_8px_40px_rgba(139,90,43,0.08)] flex flex-col items-center justify-center gap-3" style={{ minHeight: "380px" }}>
+                  <svg className="w-20 h-20 text-[#C8B89A]" fill="none" stroke="currentColor" strokeWidth={1} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                  <p className="text-[#8B5A2B] font-semibold text-sm">Owner Photo</p>
+                  <p className="text-[#C8B89A] text-xs tracking-widest uppercase">To Be Provided</p>
+                </div>
                 <div className="absolute -bottom-5 -right-5 bg-[#8B5A2B] rounded-xl px-6 py-4 shadow-lg">
                   <p className="text-white font-bold text-lg">J. Smit</p>
                   <p className="text-white/80 text-sm">Founder & Director</p>
