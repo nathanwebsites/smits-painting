@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import HeroBackground from "@/components/HeroBackground";
 
 const highlights = [
   {
@@ -59,27 +60,24 @@ const testimonials = [
 export default function HomePage() {
   return (
     <>
-      {/* ── Hero — painters at work, editorial lifestyle ── */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <Image
-          src="https://images.unsplash.com/photo-1574359411659-15573a27fd0c?w=1920&q=85&auto=format&fit=crop"
-          alt="Professional painters painting a living room"
-          fill
-          className="object-cover object-center"
-          style={{ filter: "saturate(1.18) brightness(1.06) sepia(0.12)" }}
-          priority
-        />
-        <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.18)" }} />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(160deg, rgba(74,40,10,0.15) 0%, rgba(74,40,10,0.05) 45%, rgba(74,40,10,0.15) 100%)",
-          }}
-        />
+      {/* ── Hero — parallax + gradient-mask fade ── */}
+      <section className="relative min-h-screen flex items-center justify-center">
+        <HeroBackground />
 
         <div className="relative z-20 text-center px-4 max-w-5xl mx-auto">
-          <p className="text-[#8B5A2B] text-sm sm:text-base font-semibold tracking-[0.25em] uppercase mb-4">
+          {/* Logo — hero centrepiece */}
+          <div className="mb-6 flex justify-center">
+            <Image
+              src="/logo.png"
+              alt="Smit's Painting Company"
+              width={320}
+              height={96}
+              className="w-48 sm:w-64 md:w-80 h-auto object-contain drop-shadow-2xl"
+              priority
+            />
+          </div>
+
+          <p className="text-[#D4956A] text-sm sm:text-base font-semibold tracking-[0.25em] uppercase mb-4">
             Professional Painting Services
           </p>
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-[1.1]">
@@ -117,19 +115,11 @@ export default function HomePage() {
 
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 animate-bounce z-20">
           <span className="text-white/50 text-xs tracking-widest uppercase">Scroll</span>
-          <svg className="w-5 h-5 text-[#8B5A2B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-5 h-5 text-[#D4956A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
           </svg>
         </div>
       </section>
-
-      {/* ── Brushstroke SVG divider ── */}
-      <div className="relative z-10 -mt-1" aria-hidden="true">
-        <svg viewBox="0 0 1440 56" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full block" style={{ height: "56px" }}>
-          <path d="M0,10 C180,52 380,2 640,28 C860,50 1120,4 1440,22 L1440,56 L0,56 Z" fill="#F5EDD9"/>
-          <path d="M0,24 C220,58 460,8 740,36 C960,56 1220,12 1440,30 L1440,56 L0,56 Z" fill="#F5EDD9" opacity="0.6"/>
-        </svg>
-      </div>
 
       {/* ── Why Choose Us ── */}
       <section className="py-20 px-4 bg-[#F5EDD9]">
