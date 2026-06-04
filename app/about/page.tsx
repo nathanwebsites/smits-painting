@@ -68,23 +68,23 @@ export default function AboutPage() {
   return (
     <>
       {/* Page header */}
-      <section className="relative py-20 bg-[#F5F0EB] overflow-hidden">
+      <section className="relative py-20 bg-[#F5EDD9] overflow-hidden">
         <div
           className="absolute inset-0 opacity-20"
           style={{
             backgroundImage:
-              "radial-gradient(ellipse 50% 60% at 50% 50%, #8B5E3C 0%, transparent 60%)",
+              "radial-gradient(ellipse 50% 60% at 50% 50%, #8B5A2B 0%, transparent 60%)",
           }}
         />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-[#8B5E3C] text-sm font-semibold tracking-[0.25em] uppercase mb-3">
+          <p className="text-[#8B5A2B] text-sm font-semibold tracking-[0.25em] uppercase mb-3">
             Our Story
           </p>
-          <h1 className="text-4xl sm:text-5xl font-bold text-[#2C2C2C] mb-4">
+          <h1 className="text-4xl sm:text-5xl font-bold text-[#2C1A0E] mb-4">
             About Us
           </h1>
-          <div className="w-16 h-0.5 bg-[#6b4423] mx-auto mb-6" />
-          <p className="text-[#6b6b6b] max-w-2xl mx-auto text-lg">
+          <div className="w-16 h-0.5 bg-[#8B5A2B] mx-auto mb-6" />
+          <p className="text-[#2C1A0E] max-w-2xl mx-auto text-lg">
             A family-built business rooted in craftsmanship, reliability, and
             a genuine pride in every painted surface.
           </p>
@@ -92,15 +92,15 @@ export default function AboutPage() {
       </section>
 
       {/* Stats bar */}
-      <section className="bg-[#EDE8E3] border-y border-[#D5CFC9] py-8">
+      <section className="bg-[#EDE0C4] border-y border-[#C8B89A] py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {stats.map((s, i) => (
               <div key={i}>
-                <p className="text-3xl sm:text-4xl font-bold text-[#6b4423]">
+                <p className="text-3xl sm:text-4xl font-bold text-[#8B5A2B]">
                   {s.value}
                 </p>
-                <p className="text-[#6b6b6b] text-sm mt-1">{s.label}</p>
+                <p className="text-[#2C1A0E] text-sm mt-1">{s.label}</p>
               </div>
             ))}
           </div>
@@ -108,14 +108,14 @@ export default function AboutPage() {
       </section>
 
       {/* Story section */}
-      <section className="py-16 px-4 bg-[#F5F0EB]">
+      <section className="py-16 px-4 bg-[#F5EDD9]">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-[#2C2C2C] mb-6">
-                Built on <span className="text-[#8B5E3C]">Craftsmanship</span>
+              <h2 className="text-3xl sm:text-4xl font-bold text-[#2C1A0E] mb-6">
+                Built on <span className="text-[#8B5A2B]">Craftsmanship</span>
               </h2>
-              <div className="space-y-4 text-[#6b6b6b] leading-relaxed">
+              <div className="space-y-4 text-[#2C1A0E] leading-relaxed">
                 <p>
                   Smit&apos;s Painting Company was founded over 15 years ago with a
                   simple belief: that every surface deserves the same care and
@@ -138,7 +138,7 @@ export default function AboutPage() {
               <div className="mt-8">
                 <Link
                   href="/contact"
-                  className="inline-block bg-[#6b4423] hover:bg-[#8B5E3C] text-white font-semibold px-8 py-3 rounded-md transition-all duration-300 hover:shadow-[0_0_20px_rgba(107,68,35,0.35)]"
+                  className="inline-block bg-[#8B5A2B] hover:bg-[#A06B35] text-white font-semibold px-8 py-3 rounded-md transition-all duration-300 hover:shadow-[0_0_20px_rgba(139,90,43,0.35)]"
                 >
                   Work With Us
                 </Link>
@@ -152,9 +152,9 @@ export default function AboutPage() {
                 <img
                   src="https://picsum.photos/seed/portrait1/480/560"
                   alt="Owner of Smit's Painting Company"
-                  className="w-full max-w-sm rounded-2xl border-2 border-[#6b4423] shadow-[0_8px_40px_rgba(107,68,35,0.15)]"
+                  className="w-full max-w-sm rounded-2xl border-2 border-[#8B5A2B] shadow-[0_8px_40px_rgba(139,90,43,0.15)]"
                 />
-                <div className="absolute -bottom-5 -right-5 bg-[#6b4423] rounded-xl px-6 py-4 shadow-lg">
+                <div className="absolute -bottom-5 -right-5 bg-[#8B5A2B] rounded-xl px-6 py-4 shadow-lg">
                   <p className="text-white font-bold text-lg">J. Smit</p>
                   <p className="text-white/80 text-sm">Founder & Director</p>
                 </div>
@@ -165,14 +165,14 @@ export default function AboutPage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-16 px-4 bg-[#EDE8E3] border-t border-[#D5CFC9]">
+      <section className="py-16 px-4 bg-[#EDE0C4] border-t border-[#C8B89A]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#2C2C2C] mb-4">
-              Why Choose <span className="text-[#8B5E3C]">Smit&apos;s</span>?
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#2C1A0E] mb-4">
+              Why Choose <span className="text-[#8B5A2B]">Smit&apos;s</span>?
             </h2>
-            <div className="w-16 h-0.5 bg-[#6b4423] mx-auto mb-4" />
-            <p className="text-[#6b6b6b] max-w-2xl mx-auto">
+            <div className="w-16 h-0.5 bg-[#8B5A2B] mx-auto mb-4" />
+            <p className="text-[#2C1A0E] max-w-2xl mx-auto">
               Six reasons our clients keep coming back — and recommend us to
               their friends and family.
             </p>
@@ -182,14 +182,14 @@ export default function AboutPage() {
             {whyUs.map((item, i) => (
               <div
                 key={i}
-                className="flex gap-4 bg-[#F5F0EB] rounded-xl p-6 border border-[#D5CFC9] hover:border-[#6b4423] hover:shadow-sm transition-all duration-300 group"
+                className="flex gap-4 bg-[#F5EDD9] rounded-xl p-6 border border-[#C8B89A] hover:border-[#8B5A2B] hover:shadow-sm transition-all duration-300 group"
               >
-                <div className="text-[#8B5E3C] mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                <div className="text-[#8B5A2B] mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                   {item.icon}
                 </div>
                 <div>
-                  <h3 className="text-[#2C2C2C] font-semibold mb-1">{item.title}</h3>
-                  <p className="text-[#6b6b6b] text-sm leading-relaxed">{item.desc}</p>
+                  <h3 className="text-[#2C1A0E] font-semibold mb-1">{item.title}</h3>
+                  <p className="text-[#2C1A0E] text-sm leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -198,24 +198,28 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-[#F5F0EB] border-t border-[#D5CFC9]">
+      <section className="py-16 bg-[#F5EDD9] border-t border-[#C8B89A]">
         <div className="max-w-3xl mx-auto text-center px-4">
-          <h2 className="text-3xl font-bold text-[#2C2C2C] mb-4">
+          <h2 className="text-3xl font-bold text-[#2C1A0E] mb-4">
             Ready to Get Started?
           </h2>
-          <p className="text-[#6b6b6b] text-lg mb-8">
+          <p className="text-[#2C1A0E] text-lg mb-8">
             Reach out today and let&apos;s discuss your project over a free, no-pressure quote.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="bg-[#6b4423] hover:bg-[#8B5E3C] text-white font-semibold px-10 py-4 rounded-md text-lg transition-all duration-300 hover:shadow-[0_0_25px_rgba(107,68,35,0.4)]"
+              className="inline-flex items-center gap-2.5 bg-[#8B5A2B] hover:bg-[#A06B35] text-white font-semibold px-10 py-4 rounded-md text-lg transition-all duration-300 hover:shadow-[0_0_25px_rgba(139,90,43,0.4)]"
             >
+              <svg className="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M18.37 2.63 14 7l-1.59-1.59a2 2 0 0 0-2.82 0L8 7l9 9 1.59-1.59a2 2 0 0 0 0-2.82L17 10l4.37-4.37a2.12 2.12 0 1 0-3-3Z" />
+                <path d="M9 8c-2 2.5-5 4.5-5 8a4 4 0 0 0 8 0c0-3.5-3-5.5-5-8" />
+              </svg>
               Contact Us
             </Link>
             <Link
               href="/gallery"
-              className="border border-[#6b4423] text-[#6b4423] hover:bg-[#6b4423] hover:text-white font-semibold px-10 py-4 rounded-md text-lg transition-all duration-300"
+              className="border border-[#8B5A2B] text-[#8B5A2B] hover:bg-[#8B5A2B] hover:text-white font-semibold px-10 py-4 rounded-md text-lg transition-all duration-300"
             >
               View Our Work
             </Link>

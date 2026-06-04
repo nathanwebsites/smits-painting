@@ -18,7 +18,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 bg-[#1a1a1a]/95 backdrop-blur-sm border-b border-[#2c2c2c] shadow-lg">
+    <header className="sticky top-0 z-50 bg-[#2C1A0E]/97 backdrop-blur-sm border-b border-[#1A0E06] shadow-lg">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -41,13 +41,13 @@ export default function Navbar() {
                 href={link.href}
                 className={`text-sm font-medium transition-all duration-200 relative group pb-1 ${
                   pathname === link.href
-                    ? "text-[#8B5E3C]"
-                    : "text-gray-300 hover:text-[#8B5E3C]"
+                    ? "text-[#D4956A]"
+                    : "text-white/75 hover:text-[#D4956A]"
                 }`}
               >
                 {link.label}
                 <span
-                  className={`absolute bottom-0 left-0 h-0.5 bg-[#6b4423] transition-all duration-300 ${
+                  className={`absolute bottom-0 left-0 h-0.5 bg-[#8B5A2B] transition-all duration-300 ${
                     pathname === link.href ? "w-full" : "w-0 group-hover:w-full"
                   }`}
                 />
@@ -55,7 +55,7 @@ export default function Navbar() {
             ))}
             <Link
               href="/contact"
-              className="ml-2 bg-[#6b4423] hover:bg-[#8B5E3C] text-white text-sm font-semibold px-5 py-2 rounded-md transition-all duration-300 hover:shadow-[0_0_15px_rgba(107,68,35,0.5)]"
+              className="ml-2 bg-[#8B5A2B] hover:bg-[#A06B35] text-white text-sm font-semibold px-5 py-2 rounded-md transition-all duration-300 hover:shadow-[0_0_15px_rgba(139,90,43,0.5)]"
             >
               Free Quote
             </Link>
@@ -64,29 +64,14 @@ export default function Navbar() {
           {/* Mobile toggle */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden text-white p-2 rounded-md hover:bg-[#2c2c2c] transition-colors duration-200"
+            className="md:hidden text-white p-2 rounded-md hover:bg-[#1A0E06] transition-colors duration-200"
             aria-label="Toggle navigation menu"
           >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {mobileOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               )}
             </svg>
           </button>
@@ -94,7 +79,7 @@ export default function Navbar() {
 
         {/* Mobile menu */}
         {mobileOpen && (
-          <div className="md:hidden border-t border-[#2c2c2c] py-4 space-y-1">
+          <div className="md:hidden border-t border-[#1A0E06] py-4 space-y-1">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -102,8 +87,8 @@ export default function Navbar() {
                 onClick={() => setMobileOpen(false)}
                 className={`block py-2.5 px-4 text-sm font-medium rounded-md transition-colors duration-200 ${
                   pathname === link.href
-                    ? "text-[#8B5E3C] bg-[#2c2c2c]"
-                    : "text-gray-300 hover:text-[#8B5E3C] hover:bg-[#2c2c2c]"
+                    ? "text-[#D4956A] bg-[#1A0E06]"
+                    : "text-white/75 hover:text-[#D4956A] hover:bg-[#1A0E06]"
                 }`}
               >
                 {link.label}
@@ -113,7 +98,7 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 onClick={() => setMobileOpen(false)}
-                className="block text-center bg-[#6b4423] hover:bg-[#8B5E3C] text-white text-sm font-semibold px-5 py-2.5 rounded-md transition-all duration-300"
+                className="block text-center bg-[#8B5A2B] hover:bg-[#A06B35] text-white text-sm font-semibold px-5 py-2.5 rounded-md transition-all duration-300"
               >
                 Get a Free Quote
               </Link>

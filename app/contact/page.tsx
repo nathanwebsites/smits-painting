@@ -51,23 +51,23 @@ export default function ContactPage() {
   return (
     <>
       {/* Page header */}
-      <section className="relative py-20 bg-[#F5F0EB] overflow-hidden">
+      <section className="relative py-20 bg-[#F5EDD9] overflow-hidden">
         <div
           className="absolute inset-0 opacity-20"
           style={{
             backgroundImage:
-              "radial-gradient(ellipse 50% 60% at 80% 50%, #8B5E3C 0%, transparent 60%)",
+              "radial-gradient(ellipse 50% 60% at 80% 50%, #8B5A2B 0%, transparent 60%)",
           }}
         />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-[#8B5E3C] text-sm font-semibold tracking-[0.25em] uppercase mb-3">
+          <p className="text-[#8B5A2B] text-sm font-semibold tracking-[0.25em] uppercase mb-3">
             Let&apos;s Talk
           </p>
-          <h1 className="text-4xl sm:text-5xl font-bold text-[#2C2C2C] mb-4">
+          <h1 className="text-4xl sm:text-5xl font-bold text-[#2C1A0E] mb-4">
             Contact Us
           </h1>
-          <div className="w-16 h-0.5 bg-[#6b4423] mx-auto mb-6" />
-          <p className="text-[#6b6b6b] max-w-2xl mx-auto text-lg">
+          <div className="w-16 h-0.5 bg-[#8B5A2B] mx-auto mb-6" />
+          <p className="text-[#2C1A0E] max-w-2xl mx-auto text-lg">
             Get in touch for a free, no-obligation quote or to discuss your
             project. We&apos;ll get back to you within 24 hours.
           </p>
@@ -75,21 +75,21 @@ export default function ContactPage() {
       </section>
 
       {/* Form + Details */}
-      <section className="py-16 px-4 bg-[#F5F0EB]">
+      <section className="py-16 px-4 bg-[#F5EDD9]">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
             {/* Contact Form */}
             <div className="lg:col-span-3">
-              <div className="bg-[#EDE8E3] rounded-2xl p-8 border border-[#D5CFC9]">
-                <h2 className="text-2xl font-bold text-[#2C2C2C] mb-6">
+              <div className="bg-[#EDE0C4] rounded-2xl p-8 border border-[#C8B89A]">
+                <h2 className="text-2xl font-bold text-[#2C1A0E] mb-6">
                   Send Us a Message
                 </h2>
 
                 {submitted ? (
                   <div className="text-center py-12">
-                    <div className="w-16 h-16 bg-[#6b4423]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div className="w-16 h-16 bg-[#8B5A2B]/10 rounded-full flex items-center justify-center mx-auto mb-4">
                       <svg
-                        className="w-8 h-8 text-[#6b4423]"
+                        className="w-8 h-8 text-[#8B5A2B]"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -102,10 +102,10 @@ export default function ContactPage() {
                         />
                       </svg>
                     </div>
-                    <h3 className="text-[#2C2C2C] text-xl font-bold mb-2">
+                    <h3 className="text-[#2C1A0E] text-xl font-bold mb-2">
                       Message Sent!
                     </h3>
-                    <p className="text-[#6b6b6b]">
+                    <p className="text-[#2C1A0E]">
                       Thank you, {form.name}. We&apos;ll be in touch within 24 hours.
                     </p>
                     <button
@@ -113,7 +113,7 @@ export default function ContactPage() {
                         setSubmitted(false);
                         setForm({ name: "", email: "", phone: "", service: "", message: "" });
                       }}
-                      className="mt-6 text-[#6b4423] text-sm hover:text-[#8B5E3C] transition-colors duration-200"
+                      className="mt-6 text-[#8B5A2B] text-sm hover:text-[#A06B35] transition-colors duration-200"
                     >
                       Send another message →
                     </button>
@@ -124,9 +124,9 @@ export default function ContactPage() {
                       <div>
                         <label
                           htmlFor="name"
-                          className="block text-sm font-medium text-[#2C2C2C] mb-1.5"
+                          className="block text-sm font-medium text-[#2C1A0E] mb-1.5"
                         >
-                          Full Name <span className="text-[#6b4423]">*</span>
+                          Full Name <span className="text-[#8B5A2B]">*</span>
                         </label>
                         <input
                           id="name"
@@ -136,15 +136,15 @@ export default function ContactPage() {
                           value={form.name}
                           onChange={handleChange}
                           placeholder="Jane Smith"
-                          className="w-full bg-white border border-[#D5CFC9] focus:border-[#6b4423] text-[#2C2C2C] placeholder-[#aaa] rounded-lg px-4 py-3 text-sm outline-none transition-colors duration-200"
+                          className="w-full bg-white border border-[#C8B89A] focus:border-[#8B5A2B] text-[#2C1A0E] placeholder-[#aaa] rounded-lg px-4 py-3 text-sm outline-none transition-colors duration-200"
                         />
                       </div>
                       <div>
                         <label
                           htmlFor="email"
-                          className="block text-sm font-medium text-[#2C2C2C] mb-1.5"
+                          className="block text-sm font-medium text-[#2C1A0E] mb-1.5"
                         >
-                          Email Address <span className="text-[#6b4423]">*</span>
+                          Email Address <span className="text-[#8B5A2B]">*</span>
                         </label>
                         <input
                           id="email"
@@ -154,7 +154,7 @@ export default function ContactPage() {
                           value={form.email}
                           onChange={handleChange}
                           placeholder="jane@example.com"
-                          className="w-full bg-white border border-[#D5CFC9] focus:border-[#6b4423] text-[#2C2C2C] placeholder-[#aaa] rounded-lg px-4 py-3 text-sm outline-none transition-colors duration-200"
+                          className="w-full bg-white border border-[#C8B89A] focus:border-[#8B5A2B] text-[#2C1A0E] placeholder-[#aaa] rounded-lg px-4 py-3 text-sm outline-none transition-colors duration-200"
                         />
                       </div>
                     </div>
@@ -163,7 +163,7 @@ export default function ContactPage() {
                       <div>
                         <label
                           htmlFor="phone"
-                          className="block text-sm font-medium text-[#2C2C2C] mb-1.5"
+                          className="block text-sm font-medium text-[#2C1A0E] mb-1.5"
                         >
                           Phone Number
                         </label>
@@ -174,13 +174,13 @@ export default function ContactPage() {
                           value={form.phone}
                           onChange={handleChange}
                           placeholder="022 000 0000"
-                          className="w-full bg-white border border-[#D5CFC9] focus:border-[#6b4423] text-[#2C2C2C] placeholder-[#aaa] rounded-lg px-4 py-3 text-sm outline-none transition-colors duration-200"
+                          className="w-full bg-white border border-[#C8B89A] focus:border-[#8B5A2B] text-[#2C1A0E] placeholder-[#aaa] rounded-lg px-4 py-3 text-sm outline-none transition-colors duration-200"
                         />
                       </div>
                       <div>
                         <label
                           htmlFor="service"
-                          className="block text-sm font-medium text-[#2C2C2C] mb-1.5"
+                          className="block text-sm font-medium text-[#2C1A0E] mb-1.5"
                         >
                           Service Interested In
                         </label>
@@ -189,7 +189,7 @@ export default function ContactPage() {
                           name="service"
                           value={form.service}
                           onChange={handleChange}
-                          className="w-full bg-white border border-[#D5CFC9] focus:border-[#6b4423] text-[#2C2C2C] rounded-lg px-4 py-3 text-sm outline-none transition-colors duration-200 appearance-none"
+                          className="w-full bg-white border border-[#C8B89A] focus:border-[#8B5A2B] text-[#2C1A0E] rounded-lg px-4 py-3 text-sm outline-none transition-colors duration-200 appearance-none"
                         >
                           <option value="">Select a service…</option>
                           {services.map((s) => (
@@ -202,9 +202,9 @@ export default function ContactPage() {
                     <div>
                       <label
                         htmlFor="message"
-                        className="block text-sm font-medium text-[#2C2C2C] mb-1.5"
+                        className="block text-sm font-medium text-[#2C1A0E] mb-1.5"
                       >
-                        Message <span className="text-[#6b4423]">*</span>
+                        Message <span className="text-[#8B5A2B]">*</span>
                       </label>
                       <textarea
                         id="message"
@@ -214,14 +214,14 @@ export default function ContactPage() {
                         value={form.message}
                         onChange={handleChange}
                         placeholder="Tell us about your project — size, location, timeline, or anything else we should know…"
-                        className="w-full bg-white border border-[#D5CFC9] focus:border-[#6b4423] text-[#2C2C2C] placeholder-[#aaa] rounded-lg px-4 py-3 text-sm outline-none transition-colors duration-200 resize-none"
+                        className="w-full bg-white border border-[#C8B89A] focus:border-[#8B5A2B] text-[#2C1A0E] placeholder-[#aaa] rounded-lg px-4 py-3 text-sm outline-none transition-colors duration-200 resize-none"
                       />
                     </div>
 
                     <button
                       type="submit"
                       disabled={loading}
-                      className="w-full bg-[#6b4423] hover:bg-[#8B5E3C] disabled:opacity-60 text-white font-semibold py-3.5 rounded-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(107,68,35,0.4)] flex items-center justify-center gap-2"
+                      className="w-full bg-[#8B5A2B] hover:bg-[#A06B35] disabled:opacity-60 text-white font-semibold py-3.5 rounded-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(139,90,43,0.4)] flex items-center justify-center gap-2"
                     >
                       {loading ? (
                         <>
@@ -242,8 +242,8 @@ export default function ContactPage() {
 
             {/* Contact Details */}
             <div className="lg:col-span-2 space-y-6">
-              <div className="bg-[#EDE8E3] rounded-2xl p-7 border border-[#D5CFC9]">
-                <h2 className="text-xl font-bold text-[#2C2C2C] mb-5">
+              <div className="bg-[#EDE0C4] rounded-2xl p-7 border border-[#C8B89A]">
+                <h2 className="text-xl font-bold text-[#2C1A0E] mb-5">
                   Contact Details
                 </h2>
                 <div className="space-y-5">
@@ -281,14 +281,14 @@ export default function ContactPage() {
                     },
                   ].map((item) => (
                     <div key={item.label} className="flex gap-4">
-                      <div className="w-10 h-10 bg-[#F5F0EB] rounded-lg flex items-center justify-center text-[#8B5E3C] flex-shrink-0 border border-[#D5CFC9]">
+                      <div className="w-10 h-10 bg-[#F5EDD9] rounded-lg flex items-center justify-center text-[#8B5A2B] flex-shrink-0 border border-[#C8B89A]">
                         {item.icon}
                       </div>
                       <div>
                         <p className="text-[#9a9a9a] text-xs uppercase tracking-wider mb-0.5">
                           {item.label}
                         </p>
-                        <p className="text-[#2C2C2C] text-sm font-medium">{item.value}</p>
+                        <p className="text-[#2C1A0E] text-sm font-medium">{item.value}</p>
                         <p className="text-[#9a9a9a] text-xs">{item.sub}</p>
                       </div>
                     </div>
@@ -297,7 +297,7 @@ export default function ContactPage() {
               </div>
 
               {/* Map */}
-              <div className="rounded-2xl overflow-hidden border border-[#D5CFC9] h-56 relative bg-[#EDE8E3]">
+              <div className="rounded-2xl overflow-hidden border border-[#C8B89A] h-56 relative bg-[#EDE0C4]">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12225.123456789!2d175.0190!3d-40.9140!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d3f5b1b1b1b1b1b%3A0x0!2sParaparaumu%2C%20Kapiti%20Coast%2C%20New%20Zealand!5e0!3m2!1sen!2snz!4v1700000000000!5m2!1sen!2snz"
                   className="w-full h-full border-0 opacity-90"
@@ -306,7 +306,7 @@ export default function ContactPage() {
                   referrerPolicy="no-referrer-when-downgrade"
                   title="Smit's Painting Company Location"
                 />
-                <div className="absolute inset-0 pointer-events-none border border-[#6b4423]/20 rounded-2xl" />
+                <div className="absolute inset-0 pointer-events-none border border-[#8B5A2B]/20 rounded-2xl" />
               </div>
             </div>
           </div>

@@ -28,7 +28,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${geist.variable} ${dancingScript.variable}`}>
-      <body className="bg-[#F5F0EB] text-[#2C2C2C] min-h-screen flex flex-col font-[family-name:var(--font-geist)]">
+      <body className="bg-[#F5EDD9] text-[#2C1A0E] min-h-screen flex flex-col font-[family-name:var(--font-geist)]">
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

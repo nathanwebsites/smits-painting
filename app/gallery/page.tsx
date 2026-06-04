@@ -34,23 +34,23 @@ export default function GalleryPage() {
   return (
     <>
       {/* Page header */}
-      <section className="relative py-20 bg-[#F5F0EB] overflow-hidden">
+      <section className="relative py-20 bg-[#F5EDD9] overflow-hidden">
         <div
           className="absolute inset-0 opacity-20"
           style={{
             backgroundImage:
-              "radial-gradient(ellipse 50% 60% at 30% 50%, #8B5E3C 0%, transparent 60%)",
+              "radial-gradient(ellipse 50% 60% at 30% 50%, #8B5A2B 0%, transparent 60%)",
           }}
         />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-[#8B5E3C] text-sm font-semibold tracking-[0.25em] uppercase mb-3">
+          <p className="text-[#8B5A2B] text-sm font-semibold tracking-[0.25em] uppercase mb-3">
             Our Work
           </p>
-          <h1 className="text-4xl sm:text-5xl font-bold text-[#2C2C2C] mb-4">
+          <h1 className="text-4xl sm:text-5xl font-bold text-[#2C1A0E] mb-4">
             Project Gallery
           </h1>
-          <div className="w-16 h-0.5 bg-[#6b4423] mx-auto mb-6" />
-          <p className="text-[#6b6b6b] max-w-2xl mx-auto text-lg">
+          <div className="w-16 h-0.5 bg-[#8B5A2B] mx-auto mb-6" />
+          <p className="text-[#2C1A0E] max-w-2xl mx-auto text-lg">
             A selection of completed projects — from cosy interiors to full
             exterior coats. Every finish tells a story.
           </p>
@@ -58,11 +58,11 @@ export default function GalleryPage() {
       </section>
 
       {/* Real project photos */}
-      <section className="py-12 px-4 bg-[#F5F0EB]">
+      <section className="py-12 px-4 bg-[#F5EDD9]">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-1 h-6 bg-[#6b4423] rounded-full" />
-            <h2 className="text-lg font-semibold text-[#2C2C2C]">
+            <div className="w-1 h-6 bg-[#8B5A2B] rounded-full" />
+            <h2 className="text-lg font-semibold text-[#2C1A0E]">
               Featured Projects
             </h2>
           </div>
@@ -71,7 +71,7 @@ export default function GalleryPage() {
             {realPhotos.map((img, i) => (
               <div
                 key={i}
-                className="relative group overflow-hidden rounded-xl border border-[#D5CFC9] hover:border-[#6b4423] hover:shadow-lg transition-all duration-300"
+                className="relative group overflow-hidden rounded-xl border border-[#C8B89A] hover:border-[#8B5A2B] hover:shadow-lg transition-all duration-300"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
@@ -80,7 +80,7 @@ export default function GalleryPage() {
                   className="w-full h-56 object-cover block group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-[#6b4423]/0 group-hover:bg-[#6b4423]/60 transition-all duration-300 flex items-end justify-start p-4">
+                <div className="absolute inset-0 bg-[#8B5A2B]/0 group-hover:bg-[#8B5A2B]/60 transition-all duration-300 flex items-end justify-start p-4">
                   <span className="text-white text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-1 group-hover:translate-y-0 transform">
                     {img.caption}
                   </span>
@@ -91,8 +91,8 @@ export default function GalleryPage() {
 
           {/* Masonry fill */}
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-1 h-6 bg-[#D5CFC9] rounded-full" />
-            <h2 className="text-lg font-semibold text-[#6b6b6b]">
+            <div className="w-1 h-6 bg-[#C8B89A] rounded-full" />
+            <h2 className="text-lg font-semibold text-[#2C1A0E]">
               More Projects <span className="text-sm font-normal">(photos coming soon)</span>
             </h2>
           </div>
@@ -101,7 +101,7 @@ export default function GalleryPage() {
             {placeholderPhotos.map((img, i) => (
               <div
                 key={i}
-                className="break-inside-avoid mb-4 relative group overflow-hidden rounded-xl border border-[#D5CFC9] hover:border-[#6b4423] hover:shadow-md transition-all duration-300"
+                className="break-inside-avoid mb-4 relative group overflow-hidden rounded-xl border border-[#C8B89A] hover:border-[#8B5A2B] hover:shadow-md transition-all duration-300"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
@@ -110,7 +110,7 @@ export default function GalleryPage() {
                   className="w-full h-auto block group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-[#6b4423]/0 group-hover:bg-[#6b4423]/60 transition-all duration-300 flex flex-col items-center justify-center">
+                <div className="absolute inset-0 bg-[#8B5A2B]/0 group-hover:bg-[#8B5A2B]/60 transition-all duration-300 flex flex-col items-center justify-center">
                   <span className="text-white text-base font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-2 group-hover:translate-y-0 transform">
                     {img.caption}
                   </span>
@@ -125,19 +125,23 @@ export default function GalleryPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-[#EDE8E3] border-t border-[#D5CFC9]">
+      <section className="py-16 bg-[#EDE0C4] border-t border-[#C8B89A]">
         <div className="max-w-3xl mx-auto text-center px-4">
-          <h2 className="text-3xl font-bold text-[#2C2C2C] mb-4">
+          <h2 className="text-3xl font-bold text-[#2C1A0E] mb-4">
             Love What You See?
           </h2>
-          <p className="text-[#6b6b6b] text-lg mb-8">
+          <p className="text-[#2C1A0E] text-lg mb-8">
             Let us bring the same quality to your property. Contact us today
             for a free, no-obligation quote.
           </p>
           <Link
             href="/contact"
-            className="inline-block bg-[#6b4423] hover:bg-[#8B5E3C] text-white font-semibold px-10 py-4 rounded-md text-lg transition-all duration-300 hover:shadow-[0_0_25px_rgba(107,68,35,0.4)]"
+            className="inline-flex items-center gap-2.5 bg-[#8B5A2B] hover:bg-[#A06B35] text-white font-semibold px-10 py-4 rounded-md text-lg transition-all duration-300 hover:shadow-[0_0_25px_rgba(139,90,43,0.4)]"
           >
+            <svg className="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M18.37 2.63 14 7l-1.59-1.59a2 2 0 0 0-2.82 0L8 7l9 9 1.59-1.59a2 2 0 0 0 0-2.82L17 10l4.37-4.37a2.12 2.12 0 1 0-3-3Z" />
+              <path d="M9 8c-2 2.5-5 4.5-5 8a4 4 0 0 0 8 0c0-3.5-3-5.5-5-8" />
+            </svg>
             Get a Free Quote
           </Link>
         </div>
