@@ -211,9 +211,13 @@ export default function AboutPage() {
               href="/contact"
               className="inline-flex items-center gap-2.5 bg-[#8B5A2B] hover:bg-[#A06B35] text-white font-semibold px-10 py-4 rounded-md text-lg transition-all duration-300 hover:shadow-[0_0_25px_rgba(139,90,43,0.4)]"
             >
-              <svg className="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="M18.37 2.63 14 7l-1.59-1.59a2 2 0 0 0-2.82 0L8 7l9 9 1.59-1.59a2 2 0 0 0 0-2.82L17 10l4.37-4.37a2.12 2.12 0 1 0-3-3Z" />
-                <path d="M9 8c-2 2.5-5 4.5-5 8a4 4 0 0 0 8 0c0-3.5-3-5.5-5-8" />
+              <svg className="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <g transform="rotate(45 12 12)">
+                  <path d="M10.5 3C10.5 2 11.2 1.5 12 1.5C12.8 1.5 13.5 2 13.5 3L13.5 12L10.5 12Z" fill="rgba(255,255,255,0.2)" stroke="white" strokeWidth="1" strokeLinejoin="round"/>
+                  <circle cx="12" cy="3.5" r="0.9" fill="rgba(44,26,14,0.5)" stroke="white" strokeWidth="0.5"/>
+                  <rect x="9.5" y="12" width="5" height="2.5" fill="rgba(255,255,255,0.55)" stroke="white" strokeWidth="1"/>
+                  <path d="M8 14.5L16 14.5L15.5 22L8.5 22Z" fill="rgba(255,255,255,0.9)" stroke="white" strokeWidth="1" strokeLinejoin="round"/>
+                </g>
               </svg>
               Contact Us
             </Link>
